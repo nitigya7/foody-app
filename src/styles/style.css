@@ -53,13 +53,65 @@ img{
     margin-bottom: 30px;
 }
 
-
 .res_wrapper button {
     margin-bottom: 30px;
     border: 0px;
-    background: #b8f0fb;
-    font-weight: bold;
-    text-transform: capitalize;
-    padding: 10px;
-    cursor: pointer;
+}
+.cta{
+  background: #b8f0fb;
+  font-weight: bold;
+  text-transform: capitalize;
+  padding: 10px;
+  cursor: pointer;
+}
+.top_bar {
+  display: flex;
+  align-items: center;
+  gap: 29px;
+}
+
+.search_bar input {
+  padding: 10px;
+  background: #a4a5a530;
+  border: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.search_bar input:focus, .search_bar input:focus-visible{
+  border: 1px solid #44d4f1;
+  outline: #52dff2;
+}
+.head_skull{
+  width: 436px;
+  height: 274px;
+  background: linear-gradient(to right, #f0f0f0 8%, #e0e0e0 18%, #f0f0f0 33%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+.shimmer_sec{
+  padding-top: 66px;
+}
+.content_skull{
+  width: 436px;
+  height: 100px;
+  background: linear-gradient(to right, #f0f0f0 8%, #e0e0e0 18%, #f0f0f0 33%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  margin-top: 20px;
+}
+.shimmer_wrapper{
+  display: flex;
+  flex-wrap: wrap;
+}
+.shimmer_box {
+  width: 33.3%;
+  margin-bottom: 30px;
+}
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
 }

@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/style.css"
 const Header = () => {
+
+   const[logBtn, SetLogBtn] = useState("login")
+
+   const HandleLogBtn = ()=>{
+    logBtn === "login"? SetLogBtn("logout"): SetLogBtn("login")
+   }
   return (
     <header className="site_header">
       <div className="container">
@@ -17,7 +23,7 @@ const Header = () => {
               <li>contact</li>
               <li>card</li>
               <li>about</li>
-              <button>Login</button>
+              <button className="cta" onClick={()=>{HandleLogBtn()}}>{logBtn}</button>
             </ul>
           </div>
         </div>
