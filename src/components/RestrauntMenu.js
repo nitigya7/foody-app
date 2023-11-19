@@ -14,20 +14,21 @@ const RestrauntMenu = () => {
     );
     const json = await data.json();
     setResInfo(json.data);
-    // console.log(json.data.cards[3].groupedCard.cardGroupMap.REGULAR.cards[2].card.card)
+    console.log(json.data)
   };
   if (resInfo === null) return <Shimmer />;
   const { itemCards } =
-    resInfo?.cards[3].groupedCard.cardGroupMap.REGULAR.cards[2].card.card;
+    resInfo?.cards[2].groupedCard.cardGroupMap.REGULAR.cards[2].card.card;
   console.log(itemCards);
   return (
-    <div className="menu_wrapper">
+    <div className="top_menu_wrapper">
+      <div className="container">
       <h1>{resInfo?.cards[0]?.card?.card?.info?.name}</h1>
       <h3>{resInfo?.cards[0]?.card?.card?.info?.cuisines.join(" , ")}</h3>
       <h3>{resInfo?.cards[0]?.card?.card?.info?.areaName}</h3>
       <h4>{resInfo?.cards[0]?.card?.card?.info?.costForTwoMessage}</h4>
       <h2>Menu</h2>
-      <ul className="menu_list">
+      <div className="menu_list">
         {/* {itemCards[0].card.info.name.map((items) => {
           
         })} */}
@@ -35,21 +36,22 @@ const RestrauntMenu = () => {
           itemCards.map(item=>{
             return(
               <>
-              <li key={item.card.info.id}>
+              <div key={item.card.info.id} className="menu_wrapper">
+                <div className="menu_items">
                 {item.card.info.name}
-                <span>
-              <span>Rs {item.card.info.price/ 100}</span>
-               <span>{item.card.info.description}</span>
-               </span>
-               <span>
+              Rs {item.card.info.price/ 100}
+               {item.card.info.description}
+               </div>
+               <div className="menu_image">
                 <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/"+ item.card.info.imageId} alt="img" />
-               </span>
-              </li>
+               </div>
+              </div>
               </>
             )
           })
         }
-      </ul>
+      </div>
+     </div>
     </div>
   );
 };

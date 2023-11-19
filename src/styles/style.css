@@ -118,3 +118,26 @@ img{
 .menu_list li > span{
   display: block;
 }
+
+.menu_wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ccc6c6;
+  padding-bottom: 30px;
+}
+.menu_image {
+  min-width: 200px;
+  margin-left: 30px;
+}
+
+.menu_items {
+  width: calc(100% - 200px);
+}
+.top_menu_wrapper .container{
+  width: 100%;
+  max-width: 800px;
+}
+.header_menu ul li svg {
+  vertical-align: middle;
+}

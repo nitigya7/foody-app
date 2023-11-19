@@ -3,6 +3,7 @@ import "../styles/style.css";
 import RestrauntCard from "./RestrauntCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
   const [resData, setResData] = useState([]);
   const [filterRes, setFilterRes] = useState([]);
@@ -40,7 +41,9 @@ const Body = () => {
     setFilterRes(restaurants);
   };
   
-
+   const onlineStatus = useOnlineStatus()
+    
+   if(onlineStatus === false) return <h1>you are offline check your internet connection!!!!</h1>
    return filterRes.length === 0 ? <Shimmer /> : (
     <div className="res_wrapper">
       <div className="container">
