@@ -114,4 +114,7 @@ img{
   100% {
     background-position: -100% 0;
   }
+} 
+.menu_list li > span{
+  display: block;
 }

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/style.css"
 const Header = () => {
 
@@ -19,10 +20,10 @@ const Header = () => {
           </div>
           <div className="header_menu">
             <ul>
-              <li>home</li>
+              <li><Link to={"/"}>home</Link></li>
               <li>contact</li>
               <li>card</li>
-              <li>about</li>
+              <li><Link to="/about">about</Link> </li>
               <button className="cta" onClick={()=>{HandleLogBtn()}}>{logBtn}</button>
             </ul>
           </div>

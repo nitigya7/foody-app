@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/style.css";
 import RestrauntCard from "./RestrauntCard";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 const Body = () => {
   const [resData, setResData] = useState([]);
   const [filterRes, setFilterRes] = useState([]);
@@ -29,12 +30,12 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    const restaurants =
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-      console.log(restaurants)
+    console.log(json.data.cards[2].card.card.gridElements);
+    const restaurants =json?.data?.cards[2].card.card.gridElements.infoWithStyle.restaurants;
+      // console.log(restaurants)
     setResData(restaurants);
     setFilterRes(restaurants);
   };
@@ -63,7 +64,7 @@ const Body = () => {
         </div>
         <div className="row">
           {filterRes.map((res) => {
-            return <RestrauntCard {...res.info} key={res.info.id} />;
+            return <div className="cards"><Link to={"/restraunts/"+res.info.id}><RestrauntCard {...res.info} key={res.info.id} /></Link> </div>;
           })}
         </div>
       </div>

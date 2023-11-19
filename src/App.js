@@ -1,12 +1,39 @@
 import Header from "./components/Header";
 import Body from "./components/Body";
+import { createBrowserRouter,Outlet } from "react-router-dom";
+import About from "./components/About";
+import Error from "./components/Error";
+import RestrauntMenu from "./components/RestrauntMenu";
 function App() {
   return (
     <div className="App">
       <Header/>
-      <Body/>
+      <Outlet/>
     </div>
   );
 }
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <App/>,
+    children: [
+      {
+       path: "/",
+       element: <Body/>
+      },
 
-export default App;
+      {
+        path: "/about",
+        element: <About/>,
+      },
+      {
+        path: "/restraunts/:resId",
+        element: <RestrauntMenu/>
+      }
+    ],
+    errorElement: <Error/>
+  }
+
+])
+
+export default appRouter;
