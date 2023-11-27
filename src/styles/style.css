@@ -141,3 +141,34 @@ img{
 .header_menu ul li svg {
   vertical-align: middle;
 }
+.acc_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.acc_body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.acc_img button {
+  position: absolute;
+  border: 0;
+  z-index: 99;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 110px;
+  font-size: 16px;
+  text-transform: capitalize;
+  bottom: 3px;
+  padding: 10px;
+  display: inline-block;
+  background: #9ef0fa;
+  font-weight: bold;
+}
+
+.acc_img {
+  position: relative;
+}

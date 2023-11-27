@@ -67,7 +67,8 @@ const Body = () => {
         </div>
         <div className="row">
           {filterRes.map((res) => {
-            return <div className="cards"><Link to={"/restraunts/"+res.info.id}><RestrauntCard {...res.info} key={res.info.id} /></Link> </div>;
+            return <div className="cards"><Link to={"/restraunts/"+res.info.id}>
+              <RestrauntCard {...res.info} key={res.info.id} /></Link> </div>;
           })}
         </div>
       </div>
